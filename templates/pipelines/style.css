@@ -1,0 +1,332 @@
+.date-control {
+    display: flex;
+    gap: 33px;
+    align-items: center;
+    color: #000;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: capitalize;
+}
+
+.date-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-date {
+    width: 32px;
+    height: 34px;
+    border-radius: 5px;
+    border: 1px solid var(--Disabled-stroke, rgba(196, 196, 196, 0.70));
+    background: var(--Disabled-fill, #F8F8F8);
+    padding: 0;
+    line-height: 34px;
+    font-size: 0;
+}
+
+.btn-date:hover {
+    opacity: 0.7;
+}
+
+.btn-date:active {
+    opacity: 1;
+}
+
+.btn-deal {
+    height: 42px;
+    line-height: 42px;
+    padding: 0 20px;
+    align-items: center;
+    gap: 10px;
+    display: flex;
+    border-radius: 5px;
+    background: #159C2A;
+    color: #FFF;
+    text-align: center;
+    font-family: "Sofia Pro";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: capitalize;
+    width: 142px;
+    outline: none;
+    box-shadow: none;
+}
+
+.btn-deal:hover {
+    color: #FFF;
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.btn-deal:active {
+    opacity: 1;
+}
+
+.info {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 21px;
+}
+
+.info-wrp {
+    border-radius: 4px;
+    border: 1px solid rgba(196, 196, 196, 0.70);
+    width: 100%;
+    height: 100px;
+    position: relative;
+    background-color: #fff;
+    padding: 12px 17px 17px;
+}
+
+.info-wrp::before {
+    content: "";
+    width: 24px;
+    height: 20px;
+    position: absolute;
+    top: -9px;
+    right: -11px;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid rgba(196, 196, 196, 0.70);
+    transform: rotate(45deg);
+}
+
+.info-title {
+    color: rgba(35, 34, 34, 0.90);
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    position: relative;
+    padding-left: 12px;
+    margin-bottom: 18px;
+}
+
+.info-title::before {
+    content: "";
+    top: 50%;
+    left: 0;
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: #54D768;
+    margin-top: -1.5px;
+}
+
+.info-data {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+}
+
+.info-data span {
+    color: rgba(35, 34, 34, 0.90);
+    text-align: center;
+    font-family: 'proxima_novaregular';
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.cp_content_page {
+    border: 1px solid #EEE;
+    background: #FFF;
+    border-radius: 0;
+    padding: 29px 19px 0;
+    flex-direction: column;
+}
+
+.pipeline-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.pipeline-table tbody tr[data-href] {
+    cursor: pointer;
+}
+
+.pipeline-table thead {
+    background: #F9F9F9;
+}
+
+.pipeline-table th {
+    color: #1B1B1B;
+    font-family: "Sofia Pro";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: capitalize;
+    height: 42px;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding: 15px 25px;
+    border-bottom: 1px solid #E8E9E8;
+    text-align: start;
+}
+
+.pipeline-table td {
+    color: #1B1B1B;
+    font-family: "Sofia Pro";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: capitalize;
+    height: 42px;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding: 10px 25px;
+    border-bottom: 1px solid #E8E9E8;
+}
+
+.pipeline-table tr:hover td {
+    background: #E7F3E7;
+}
+
+.stage-label {
+    color: #FFF;
+    text-align: center;
+    font-family: "Sofia Pro";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    text-transform: uppercase;
+    padding: 0 6px;
+    border-radius: 3px;
+    height: 22px;
+    display: inline-block;
+}
+
+.stage-label.approved {
+    background: #1BB21B;
+}
+
+.stage-label.underwriting {
+    background: #E6E6E6;
+    color: #808080;
+}
+
+.stage-label.declined {
+    background: #FF5555;
+}
+
+.stage-label.funded {
+    background: #159C2A;
+}
+
+.sort-wrp {
+    display: flex;
+    cursor: pointer;
+}
+
+.sort {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 14px;
+}
+
+.sort svg {
+    display: block;
+    margin: 2px 0;
+}
+
+.sort-wrp svg {
+    opacity: 0.5;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: 20px 40px;
+}
+
+.pagination .page-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagination .page-link {
+    color: #8B928C;
+    text-align: center;
+    font-family: "Sofia Pro";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: capitalize;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    border-bottom: 1px solid #E8E9E8;
+    border-top: 1px solid #E8E9E8;
+    width: 36px;
+    height: 39px;
+    align-content: center;
+}
+
+.pagination .page-item:not(.active) .page-link:hover {
+    background-color: rgb(233, 236, 239);
+}
+
+.pagination .page-item.active .page-link {
+    color: #fff;
+}
+
+.pagination .page-item:first-child .page-link {
+    border-left: 1px solid #E8E9E8;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.page-item:last-child .page-link {
+    border-right: 1px solid #E8E9E8;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.pagination .page-link svg {
+    margin-top: -2px;
+}
+
+.pagination .page-link.active {
+    background: #159C2A;
+    color: #FFF;
+    border: 1px solid #159C2A;
+}
+
+.current-month {
+    display: inline-block;
+    width: 142px;
+    text-align: left;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.pipeline__wrapper {
+    padding: 8px 10px 16px;
+}
+
+@media screen and (max-width: 1200px) {
+    .info-title {
+        font-size: 16px;
+    }
+}

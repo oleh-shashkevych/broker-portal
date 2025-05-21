@@ -1,0 +1,175 @@
+/* Popup Overlay */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+    z-index: 1000;
+}
+
+.popup-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease;
+}
+
+/* Upload files Popup */
+.upload-popup {
+    padding: 20px 31px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    background-color: white;
+    width: 90%;
+    max-width: 1640px;
+    z-index: 1001;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.upload-popup.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1); /* Animate to full scale */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.upload-popup__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 21px 10px;
+    border-bottom: 1px solid #E8E9E8;
+    margin-bottom: 20px;
+}
+
+.upload-popup__title {
+    font-size: 22px;
+    font-family: 'proxima_novasemibold', sans-serif;
+    color: #1BB21B;
+    text-transform: uppercase;
+}
+
+.upload-popup__close-btn {
+    background: #80808026;
+    border: none;
+    cursor: pointer;
+    width: 32px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.upload-popup__close-btn:hover {
+    background-color: #808080;
+}
+
+.upload-popup__close-btn:hover svg path {
+    fill: #fff;
+}
+
+.upload-popup__content {
+    padding: 0;
+}
+
+.upload-popup__drop-zone {
+    border: 2px dashed #159C2A;
+    border-radius: 20px;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.upload-popup__drop-text {
+    font-size: 15px;
+    font-family: 'proxima_novasemibold';
+    color: #232222;
+    margin-bottom: 15px;
+}
+
+.upload-popup__or-separator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    font-size: 7px;
+    color: #C0C0C0;
+    font-family: 'proxima_novasemibold';
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.upload-popup__or-separator::before,
+.upload-popup__or-separator::after {
+    content: '';
+    width: 90px;
+    height: 1px;
+    background-color: #D1D1D1;
+}
+
+.upload-popup__browse-btn {
+    background-color: transparent;
+    color: #159C2A;
+    border: 1px solid #159C2A;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: 'proxima_novasemibold';
+    width: 126px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.upload-popup__browse-btn:hover {
+    background-color: #159C2A;
+    color: #fff;
+}
+
+.upload-popup__file-info {
+    margin-top: 30px;
+    font-size: 12px;
+    color: #232222;
+    font-family: 'proxima_nova';
+}
+
+.upload-popup__file-info span {
+    color: #159C2A;
+}
+
+.upload-popup__file-info strong {
+    font-family: 'proxima_novasemibold';
+}
+
+.upload-popup__footer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    padding: 20px 0;
+}
+
+.upload-popup__button {
+    width: 140px;
+    height: 45px;
+    background-color: #1BB21B;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 5px;
+    font-family: 'proxima_novasemibold';
+    font-size: 15px;
+}
