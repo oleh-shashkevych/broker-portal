@@ -169,6 +169,17 @@ const barChart = new Chart(ctx, {
 // Функция для обновления ширины столбцов
 function updateBarThickness() {
   const screenWidth = window.innerWidth;
+  
+  // Сначала фильтруем данные
+  const filteredData = labels.map((label, index) => ({
+    label: label,
+    value: dataValues[index]
+  })).filter(item => item.value !== 0);
+
+  barChart.data.labels = filteredData.map(item => item.label);
+  barChart.data.datasets[0].data = filteredData.map(item => item.value);
+  
+  // Затем обновляем ширину столбцов
   if (screenWidth < 650) {
     barChart.data.datasets[0].barThickness = 7;
     barChart.data.datasets[0].maxBarThickness = 7;
@@ -179,7 +190,8 @@ function updateBarThickness() {
     barChart.data.datasets[0].barThickness = 10;
     barChart.data.datasets[0].maxBarThickness = 10;
   }
-  barChart.update(); // Обновляем график
+  
+  barChart.update();
 }
 
 // Вызываем при загрузке страницы

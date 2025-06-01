@@ -1242,7 +1242,8 @@
 	font-weight: 500;
 }
 
-.not-leads-approvals__item .tag-approved {
+.not-leads-approvals__item .tag-approved,
+.referral-table-status .active {
 	display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -1257,7 +1258,8 @@
 	font-family: 'proxima_nova';
 }
 
-.not-leads-approvals__item .tag-approved::before {
+.not-leads-approvals__item .tag-approved::before,
+.referral-table-status .active::before {
 	content: '';
 	width: 6px;
 	height: 6px;
@@ -1316,7 +1318,7 @@
 
 .quotes_referral-table--top {
 	display: grid;
-	grid-template-columns: 22fr 19fr 20fr 20fr 16fr 20fr 15fr 20fr 17fr 8fr 18fr;
+	grid-template-columns: 22fr 19fr 20fr 16fr 20fr 15fr 20fr 17fr 8fr 18fr;
 	align-items: center;
 }
 
@@ -1336,7 +1338,7 @@
 
 .quotes_referral-table--item {
 	display: grid;
-    grid-template-columns: 22fr 19fr 20fr 20fr 16fr 20fr 15fr 20fr 17fr 8fr 18fr;
+    grid-template-columns: 22fr 19fr 20fr 16fr 20fr 15fr 20fr 17fr 8fr 18fr;
     align-items: center;
 }
 

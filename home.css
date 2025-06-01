@@ -169,10 +169,16 @@
 .applications {
     max-width: 100%;
     overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
 }
 
 .applications_info {
     width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .revenue_info,
@@ -325,7 +331,7 @@
 }
 
 .applications_chart-wrapper {
-    height: 200px;
+    height: 100%;
     display: flex;
     align-items: flex-start;
     gap: 20px;
@@ -364,7 +370,7 @@
 
 .chart-container {
     width: 100%;
-    height: 200px;
+    height: 100%;
     position: relative;
     flex-grow: 1;
     /* Позволяет графику занимать оставшееся пространство */

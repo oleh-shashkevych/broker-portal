@@ -125,7 +125,8 @@
                                 <div class="header_cp_bar_menu">
                                     <div class="cp_user_logout">
                                         <div class="h-notifications" style="display: none !important;">
-                                            <button class="h-notifications__button" type="button" id="notification-button">
+                                            <button class="h-notifications__button" type="button"
+                                                id="notification-button">
                                                 <img src="./assets/images/notification.svg" alt="notification">
                                                 <span class="alert"></span>
                                             </button>
@@ -629,11 +630,21 @@
                                     </div>
 
                                     <div class="revenue_info">
-
+                                        <div class="dashboard_filter-wrapper">
+                                            <div class="dashboard_filter">
+                                                <button class="dashboard_filter_block-wrapper revenue_month-wrapper"
+                                                    data-period="month">
+                                                    this month
+                                                </button>
+                                                <button class="dashboard_filter_block-wrapper revenue_year-wrapper"
+                                                    data-period="year">
+                                                    Year
+                                                </button>
+                                            </div>
+                                        </div>
 
                                         <div class="revenue_info-items">
-                                            <div class="revenue_user" data-rvn-usr="700000"
-                                                data-username="MCA">
+                                            <div class="revenue_user" data-rvn-usr="700000" data-username="MCA">
                                                 <p>MCA</p>
                                                 <div class="user_progress-bar">
                                                     <span class="user_progress_line" style="width: 46.6667%;">
@@ -653,8 +664,7 @@
                                                     </span>
                                                 </div>
                                             </div>
-                                            <div class="revenue_user" data-rvn-usr="1100000"
-                                                data-username="SBA">
+                                            <div class="revenue_user" data-rvn-usr="1100000" data-username="SBA">
                                                 <p>SBA</p>
                                                 <div class="user_progress-bar">
                                                     <span class="user_progress_line" style="width: 73.3333%;">
@@ -697,6 +707,18 @@
                                     </div>
 
                                     <div class="applications_info">
+                                        <div class="dashboard_filter-wrapper">
+                                            <div class="dashboard_filter">
+                                                <button class="dashboard_filter_block-wrapper revenue_month-wrapper"
+                                                    data-period="month">
+                                                    this month
+                                                </button>
+                                                <button class="dashboard_filter_block-wrapper revenue_year-wrapper"
+                                                    data-period="year">
+                                                    Year
+                                                </button>
+                                            </div>
+                                        </div>
 
 
                                         <div class="applications_chart-wrapper">
@@ -714,8 +736,6 @@
                                                 <div id="chartjs-tooltip"></div>
                                             </div>
                                         </div>
-
-                                        <div class="applications_selected-users" id="applicationsSelectedUsers"></div>
                                     </div>
                                 </div>
                             </div>
