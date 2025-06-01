@@ -8,14 +8,12 @@
     background-color: rgba(0, 0, 0, 0.4);
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0s linear 0.3s;
     z-index: 1000;
 }
 
 .popup-overlay.active {
     opacity: 1;
     visibility: visible;
-    transition: opacity 0.3s ease;
 }
 
 /* Upload files Popup */
@@ -36,8 +34,8 @@
 .upload-popup.active {
     opacity: 1;
     visibility: visible;
-    transform: translate(-50%, -50%) scale(1); /* Animate to full scale */
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translate(-50%, -50%) scale(1);
+    /* Animate to full scale */
 }
 
 .upload-popup__header {
@@ -172,4 +170,185 @@
     border-radius: 5px;
     font-family: 'proxima_novasemibold';
     font-size: 15px;
+}
+
+/* Documents Modal Styles */
+.modal {
+    padding: 15px 20px 30px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    background-color: #fff;
+    width: 90%;
+    max-width: 500px;
+    z-index: 1003;
+    opacity: 0;
+    visibility: hidden;
+    border-radius: 3px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modal__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.modal__title {
+    font-size: 24px;
+    font-family: 'Urbanist', sans-serif;
+    color: #232323;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin: 0;
+}
+
+.modal__close-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: auto;
+}
+
+.modal__content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.modal .section-title {
+    color: #071C0C;
+    font-size: 22px;
+    font-family: 'proxima_nova', sans-serif;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    padding: 10px 0;
+}
+
+.modal .document-item {
+    display: flex;
+    align-items: center;
+    padding-bottom: 15px;
+    margin: 0 20px 15px 20px;
+    border-bottom: 1px solid #E8E9E8;
+}
+
+.modal .document-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.modal .document-icon {
+    width: 33px;
+    height: 28px;
+    margin-right: 5px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal .document-name {
+    font-size: 16px;
+    color: #232323CC;
+    font-family: 'proxima_nova';
+}
+
+.modal select {
+    width: 100%;
+    padding: 10px 6px;
+    border: 1px solid #D0D3D1;
+    border-radius: 3px;
+    font-size: 14px;
+    line-height: 20px;
+    font-family: 'Urbanist', sans-serif;
+    color: rgba(35, 35, 35, 0.8);
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%23232323' stroke-opacity='0.8' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding-right: 30px;
+}
+
+.modal__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 17px;
+    margin-top: 30px;
+}
+
+.modal-btn__submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 160px;
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #159C2A;
+    background-color: #159C2A;
+    color: #fff;
+    border-radius: 3px;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+    cursor: pointer;
+}
+
+.modal-btn__submit:hover {
+    background-color: #fff;
+    color: #159C2A;
+}
+
+.modal-btn__reset {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 160px;
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #1B1B1B;
+    background-color: #1B1B1B;
+    color: #fff;
+    border-radius: 3px;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+    cursor: pointer;
+}
+
+.modal-btn__reset:hover {
+    background-color: #fff;
+    color: #1B1B1B;
+}
+
+.input-error {
+    border-color: red !important; /* Делает рамку красной */
+    /* Вы можете добавить и другие стили, например, background-color */
+}
+
+.validation-error-message {
+    color: red;
+    font-size: 0.9em; /* Или другой подходящий размер */
+    margin-top: 5px; /* Отступ сверху от поля */
+    display: block; /* Чтобы сообщение было на новой строке */
 }
