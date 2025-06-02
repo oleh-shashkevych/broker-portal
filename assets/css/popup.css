@@ -352,3 +352,41 @@
     margin-top: 5px; /* Отступ сверху от поля */
     display: block; /* Чтобы сообщение было на новой строке */
 }
+
+.modal .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 15px;
+}
+
+.modal .form-field:last-child {
+    margin-bottom: 0;
+}
+
+.modal .form-field label {
+    display: block;
+    margin-bottom: 5px;
+    font-family: 'Urbanist', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: rgba(35, 35, 35, 0.8);
+}
+
+.modal .form-field input {
+    width: 100%;
+    padding: 10px 6px;
+    border: 1px solid #D0D3D1;
+    border-radius: 3px;
+    font-size: 14px;
+    line-height: 20px;
+    font-family: 'Urbanist', sans-serif;
+    color: rgba(35, 35, 35, 0.8);
+}
+
+.modal .form-field input::placeholder,
+.modal .form-field textarea::placeholder {
+    color: #8B928C !important;
+    opacity: 1;
+}

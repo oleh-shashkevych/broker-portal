@@ -1026,7 +1026,7 @@
 
 .contact_directory-items--top {
 	display: grid;
-	grid-template-columns: 12fr 12fr 12fr 12fr 7fr;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
 	align-items: center;
 }
 
@@ -1084,7 +1084,7 @@
 
 .contact_directory-item {
 	display: grid;
-	grid-template-columns: 12fr 12fr 12fr 12fr 7fr;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
 	align-items: center;
 }
 
@@ -1158,7 +1158,7 @@
 .details__add-files {
 	width: 230px;
 	height: 45px;
-	background-color: #1BB21B;
+	background-color: #159c2a;
 	padding: 13px 20px;
 	border-radius: 5px;
 	font-family: 'proxima_nova';
@@ -1417,4 +1417,44 @@
 	height: 6px;
 	background-color: #159c2a;
 	border-radius: 50%;
+}
+
+/* Sub Attachments */
+.sub_attachments .section-title {
+    color: #071C0C;
+    font-size: 22px;
+    font-family: 'proxima_nova', sans-serif;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    padding: 10px 0;
+}
+
+.sub_attachments .document-item {
+    display: flex;
+    align-items: center;
+    padding-bottom: 15px;
+    margin: 0 20px 15px 20px;
+    border-bottom: 1px solid #E8E9E8;
+}
+
+.sub_attachments .document-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.sub_attachments .document-icon {
+    width: 33px;
+    height: 28px;
+    margin-right: 5px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sub_attachments .document-name {
+    font-size: 16px;
+    color: #232323CC;
+    font-family: 'proxima_nova';
 }
