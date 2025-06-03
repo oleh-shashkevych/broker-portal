@@ -164,6 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     callTypeSelect.classList.remove('input-error');
                     removeValidationError(callTypeSelect);
                 }
+                closeModal(statusModal);
             });
         }
     }

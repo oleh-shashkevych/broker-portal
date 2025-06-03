@@ -11,7 +11,7 @@
     font-family: 'proxima_novaregular';
     font-size: 22px;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 400;
     line-height: normal;
     text-transform: uppercase;
     padding: 0 10px 10px;
@@ -31,7 +31,7 @@
     font-family: "proxima_novaregular";
     font-size: 16px;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 400;
     line-height: normal;
     margin-bottom: 15px;
 }
@@ -489,6 +489,11 @@ textarea.select2-search__field::placeholder, .phone-number::placeholder {
     line-height: 39px;
     display: inline-block;
     cursor: pointer;
+    transition-duration: .1s;
+}
+
+.remove-file-button span {
+    transition-duration: .1s;
 }
 
 .remove-file-button svg {
@@ -498,6 +503,10 @@ textarea.select2-search__field::placeholder, .phone-number::placeholder {
 .remove-file-button:hover {
     background: rgb(248, 109, 109);
     color: #fff;
+}
+
+.remove-file-button svg path {
+    transition-duration: .1s;
 }
 
 .remove-file-button:hover svg path {
@@ -562,10 +571,10 @@ textarea.select2-search__field::placeholder, .phone-number::placeholder {
 }
 
 .single-select .select2-container--default .select2-selection--single .select2-selection__rendered {
-    font-family: "proxima_nova_rgbold";
+    font-family: "proxima_nova";
     font-size: 15px !important;
     font-style: normal;
-    font-weight: 600 ;
+    font-weight: 400 ;
     height: 100%;
     display: inline-block;
     line-height: 36px;

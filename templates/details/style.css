@@ -1333,6 +1333,7 @@
 	display: grid;
 	grid-template-columns: 22fr 19fr 20fr 16fr 20fr 15fr 20fr 17fr 8fr 18fr;
 	align-items: center;
+	background-color: #F9F9F9;
 }
 
 .quotes_referral-table--top>div {
@@ -1342,11 +1343,26 @@
 	color: #232323B2;
 	font-family: "Sofia Pro";
 	text-transform: capitalize;
-	padding: 10px 20px;
-	background-color: #F9F9F9;
 	width: 100%;
 	height: 100%;
 	align-content: center;
+	background-color: transparent;
+	padding: 10px 0;
+	text-align: start;
+}
+
+.quotes_referral-table--top>div:first-child {
+	padding-inline-start: 20px;
+}
+
+.quotes_referral-table--top>div:last-child {
+	padding-inline-end: 20px;
+}
+
+.quotes_referral-table--top>div.referral-table-stips,
+.quotes_referral-table--top>div.referral-table-status {
+	justify-content: center;
+	text-align: center;
 }
 
 .quotes_referral-table--item {
@@ -1366,13 +1382,27 @@
 	color: #232323;
 	font-family: "Sofia Pro";
 	text-transform: capitalize;
-	padding: 13px 20px;
+	padding: 13px 0;
 	background-color: #FFFFFF;
 	width: 100%;
 	max-width: unset;
 	display: flex;
 	align-items: center;
 	height: 100%;
+}
+
+.quotes_referral-table--item>div:first-child {
+	padding-inline-start: 20px;
+}
+
+.quotes_referral-table--item>div:last-child {
+	padding-inline-end: 20px;
+}
+
+.quotes_referral-table--item>div.referral-table-stips,
+.quotes_referral-table--item>div.referral-table-status {
+	justify-content: center;
+	text-align: center;
 }
 
 .referral-table-date {

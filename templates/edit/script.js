@@ -1,16 +1,21 @@
 $(document).ready(function () {
-    $('.basic-multiple').select2(
-        {
-            selectAll: false,
-            width: "100%",
-            placeholder: "Choose...",
-            closeOnSelect: false,
-            minimumResultsForSearch: -1
-        }
-    );
+    // Ініціалізація Select2 для поля "Program Type"
+    // Важливо: залишаємо dropdownParent, оскільки це загалом добра практика для позиціонування випадаючого списку.
+    // Якщо батьківський елемент (div.multiple-select) знаходиться всередині .right_cp_bar,
+    // це допомагає select2 краще розраховувати позицію.
+    $('#currently-offer-customers').select2({
+        selectAll: false,
+        width: "100%",
+        placeholder: "Choose...",
+        closeOnSelect: false,
+        minimumResultsForSearch: -1,
+        dropdownParent: $('#currently-offer-customers').parent() // Встановлюємо батьківський елемент
+    });
 
-    $('.basic-single').select2(
-        {
+    // Ініціалізація Select2 для полів "File Type"
+    // Використовуємо .each() для коректного встановлення dropdownParent для кожного екземпляра
+    $('.basic-single').each(function() {
+        $(this).select2({
             selectAll: false,
             width: "100%",
             placeholder: "Please Select...",
@@ -20,9 +25,40 @@ $(document).ready(function () {
                     $(container).addClass("single-select-option");
                 }
                 return data.text;
-            }
+            },
+            dropdownParent: $(this).parent() // Встановлюємо батьківський елемент для кожного
+        });
+    });
+
+    const $scrollLockingSelects = $('.basic-multiple, .basic-single');
+    const $scrollableContainer = $('.right_cp_bar'); // Ваш блок з прокруткою
+    let originalContainerOverflowY = ''; // Зберігаємо оригінальний стиль overflow-y
+
+    $scrollLockingSelects.on('select2:open', function (e) {
+        // Перевіряємо, чи прокрутка вже заблокована (наприклад, іншим select2)
+        // і чи існує контейнер для прокрутки
+        if ($scrollableContainer.length && $scrollableContainer.css('overflow-y') !== 'hidden') {
+            originalContainerOverflowY = $scrollableContainer.css('overflow-y');
+            $scrollableContainer.css('overflow-y', 'hidden');
         }
-    );
+    });
+
+    $scrollLockingSelects.on('select2:close', function (e) {
+        // Перевіряємо, чи є ще відкриті select2, що блокують прокрутку
+        let stillOpenCount = 0;
+        $scrollLockingSelects.each(function() {
+            // Перевіряємо, чи існує екземпляр select2 і чи він відкритий
+            if ($(this).data('select2') && $(this).data('select2').isOpen && $(this).data('select2').isOpen()) {
+                stillOpenCount++;
+            }
+        });
+
+        // Якщо це був останній відкритий select2, розблоковуємо прокрутку
+        if (stillOpenCount === 0 && $scrollableContainer.length) {
+            $scrollableContainer.css('overflow-y', originalContainerOverflowY || ''); // Відновлюємо оригінальний стиль або стандартний
+            originalContainerOverflowY = ''; // Скидаємо збережене значення
+        }
+    });
 
     $('.phone-number').keydown(function (e) {
         const key = e.which || e.charCode || e.keyCode || 0;
