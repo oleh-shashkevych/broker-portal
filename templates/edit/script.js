@@ -14,7 +14,7 @@ $(document).ready(function () {
 
     // Ініціалізація Select2 для полів "File Type"
     // Використовуємо .each() для коректного встановлення dropdownParent для кожного екземпляра
-    $('.basic-single').each(function() {
+    $('.basic-single').each(function () {
         $(this).select2({
             selectAll: false,
             width: "100%",
@@ -46,7 +46,7 @@ $(document).ready(function () {
     $scrollLockingSelects.on('select2:close', function (e) {
         // Перевіряємо, чи є ще відкриті select2, що блокують прокрутку
         let stillOpenCount = 0;
-        $scrollLockingSelects.each(function() {
+        $scrollLockingSelects.each(function () {
             // Перевіряємо, чи існує екземпляр select2 і чи він відкритий
             if ($(this).data('select2') && $(this).data('select2').isOpen && $(this).data('select2').isOpen()) {
                 stillOpenCount++;
@@ -62,7 +62,7 @@ $(document).ready(function () {
 
     $('.phone-number').keydown(function (e) {
         const key = e.which || e.charCode || e.keyCode || 0;
-        $phone = $(this);
+        let $phone = $(this);
 
         // Don't let them remove the starting '('
         if ($phone.val().length === 1 && (key === 8 || key === 46)) {
@@ -96,7 +96,7 @@ $(document).ready(function () {
     })
 
         .bind('focus click', function () {
-            $phone = $(this);
+            let $phone = $(this);
 
             if ($phone.val().length === 0) {
                 $phone.val('(');
@@ -107,7 +107,7 @@ $(document).ready(function () {
         })
 
         .blur(function () {
-            $phone = $(this);
+            let $phone = $(this);
 
             if ($phone.val() === '(') {
                 $phone.val('');
