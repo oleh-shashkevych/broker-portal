@@ -1,0 +1,174 @@
+/* Використовуємо шрифти, підключені в main.html */
+:root {
+    --theme-green: #159C2A;
+    --theme-green-hover: #159C2AE5; /* Базовий зелений з прозорістю для ховеру */
+    --theme-green-dark: #117a21;
+    --text-dark: #000000; /* Оновлений колір тексту */
+    --card-bg: #ffffff;
+    --font-title: 'Urbanist', sans-serif; /* Новий шрифт для заголовків */
+    --font-text: 'Urbanist', sans-serif;  /* Новий шрифт для тексту */
+}
+
+/* Контейнер-сетка для карточек */
+.programs-grid {
+    display: grid;
+    /* 3 колонки за замовчуванням */
+    grid-template-columns: repeat(3, 1fr);
+    /* Нові вимоги: без відступів */
+    gap: 0;
+    padding: 0;
+}
+
+/* Стиль окремої карточки */
+.program-card {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--card-bg);
+    /* Нові вимоги до відступів, висоти та рамки */
+    padding: 32px;
+    min-height: 396px;
+    border-radius: 3px;
+    border: 1px solid transparent; /* Прозора рамка за замовчуванням */
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.3s ease; /* Анімація для рамки */
+}
+
+.program-card:hover {
+    /* Нова вимога: рамка з'являється при наведенні */
+    border-color: var(--theme-green-hover);
+}
+
+/* Псевдо-елемент для фонового зображення */
+.program-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(100%);
+    opacity: 70%;
+    z-index: 0;
+    transition: opacity 0.3s ease;
+}
+
+.program-card:hover::before {
+    opacity: 80%; /* Ефект фону при наведенні залишаємо */
+}
+
+/* Шляхи до фонових зображень (залиш свої, якщо вже додав) */
+.program-card.card-1::before { background-image: url('./img/blog-1.png'); }
+.program-card.card-2::before { background-image: url('./img/blog-2.png'); }
+.program-card.card-3::before { background-image: url('./img/blog-3.png'); }
+.program-card.card-4::before { background-image: url('./img/blog-4.png'); }
+.program-card.card-5::before { background-image: url('./img/blog-5.png'); }
+.program-card.card-6::before { background-image: url('./img/blog-6.png'); }
+
+/* Контент карточки (текст і кнопка) */
+.program-card__content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+}
+
+/* Нова вимога: обмеження ширини текстового блоку */
+.program-card__content > div {
+    max-width: 300px;
+}
+
+/* Заголовок карточки */
+.program-card__title {
+    /* Нові стилі для заголовка */
+    font-family: var(--font-title);
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 100%; /* 1.0 */
+    letter-spacing: 0;
+    text-transform: uppercase;
+    color: var(--text-dark);
+    margin: 0 0 12px 0;
+    font-style: normal; /* 'SemiBold' - це font-weight: 600 */
+}
+
+/* Опис карточки */
+.program-card__description {
+    /* Нові стилі для тексту */
+    font-family: var(--font-text);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 100%; /* 1.0 */
+    letter-spacing: 0;
+    color: var(--text-dark);
+    margin: 0 0 24px 0;
+    font-style: normal; /* 'Regular' - це font-weight: 400 */
+}
+
+/* === КНОПКА (ОНОВЛЕНО) === */
+.program-card__button {
+    background-color: var(--theme-green);
+    color: #ffffff;
+    text-decoration: none;
+    
+    /* Нові стилі */
+    display: inline-flex; /* Використовуємо inline-flex */
+    align-items: center; /* Центрування по вертикалі */
+    gap: 30px; /* Відстань між текстом та іконкою */
+    padding: 10px 14px; /* Нові паддінги */
+    border-radius: 3px; /* Новий радіус */
+    
+    /* Нові стилі тексту */
+    font-family: var(--font-title); /* Urbanist */
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0;
+    text-transform: capitalize;
+    font-style: normal;
+
+    /* Старі стилі */
+    align-self: flex-start; /* Залишаємо, щоб кнопка не розтягувалась */
+    transition: background-color 0.3s ease;
+}
+
+.program-card__button:hover {
+    background-color: var(--theme-green-dark);
+}
+
+/* Стиль для SVG всередині кнопки */
+.program-card__button svg {
+    flex-shrink: 0; /* Забороняємо SVG стискатися */
+}
+
+
+/* --- Адаптивність --- */
+
+/* Планшети (менше 1024px) */
+@media (max-width: 1024px) {
+    .programs-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 колонки */
+    }
+}
+
+/* Мобільні (менше 768px) */
+@media (max-width: 768px) {
+    .programs-grid {
+        grid-template-columns: 1fr; /* 1 колонка */
+    }
+    .program-card {
+        padding: 24px;
+        min-height: auto;
+    }
+    .program-card__content > div {
+        max-width: none;
+    }
+    /* Зменшуємо відступ на мобільних */
+    .program-card__button {
+        gap: 15px;
+    }
+}
