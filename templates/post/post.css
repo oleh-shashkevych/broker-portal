@@ -1,417 +1,501 @@
-/* Подключаем шрифты, которые уже есть в твоем post.html */
-body {
-    font-family: 'Public Sans', 'Inter', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --theme-green: #159C2A;
+    --theme-green-hover: #159C2AE5; /* Базовий зелений з прозорістю для ховеру */
+    --theme-green-dark: #117a21;
+    --text-dark: #000000; /* Оновлений колір тексту */
+    --card-bg: #ffffff;
+    --font: 'Urbanist', sans-serif;
 }
 
-/* Главный контейнер для контента страницы */
-.sba-page-content {
-    /* Твой .right_cp_bar уже имеет padding: 30px 25px; 
-      и .content имеет background-color: #fff;
-      Поэтому основной контейнер можно оставить простым.
-      Если фон не белый, добавь: background-color: #fff;
-      Если нужны отступы, добавь: padding: 20px;
-    */
-    max-width: 900px; /* Ограничим ширину для читаемости */
+.post-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-/* 1. Ссылка "Назад" */
-.back-to-list-link {
-    display: inline-block;
-    margin-bottom: 20px;
-    font-size: 14px;
-    color: #555;
-    text-decoration: none;
-    font-weight: 500;
-}
-.back-to-list-link:hover {
-    text-decoration: underline;
-}
+/* --- Стили для нового блока SBA (из скриншота) --- */
 
-/* 2. Главный заголовок */
-.sba-main-title {
-    font-family: 'Public Sans', sans-serif;
-    font-size: 28px;
-    font-weight: 700;
-    color: #232323;
-    margin-bottom: 20px;
-    line-height: 1.3;
-}
-
-/* 3. Информационный баннер */
-.info-banner {
-    background-color: #f1f8f1; /* Светло-зеленый фон как на скриншоте */
-    border: 1px solid #d8e9d8; /* Слегка заметная рамка */
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 30px;
-}
-.info-banner p {
-    margin: 0;
-    font-family: 'Public Sans', sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    color: #333;
-}
-
-/* 4. Текстовая секция */
-.sba-section {
-    margin-bottom: 30px;
-}
-.sba-subtitle {
-    font-family: 'Public Sans', sans-serif;
-    font-size: 22px;
-    font-weight: 700;
-    color: #232323;
-    margin-bottom: 15px;
-}
-.sba-section p {
-    font-family: 'Public Sans', sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    color: #444;
-    margin-bottom: 15px;
-}
-.sba-section p:last-child {
-    margin-bottom: 0;
-}
-
-/* 5. Секция с тремя колонками (иконками) */
-.sba-features {
+/* 1. Главный контейнер */
+.new-sba-block {
+    padding: 14px 14px 21px;
+    border-radius: 3px;
+    border: 1px solid #EEEEEE;
+    background-color: #fff;
     display: flex;
-    justify-content: space-between; /* Равномерно распределит колонки */
-    align-items: flex-start;
-    flex-wrap: wrap; /* Для переноса на мобильных */
-    gap: 20px; /* Отступ между блоками */
-    margin-top: 30px;
-    text-align: center; /* Центрируем текст внутри колонок */
+    flex-direction: column;
+    gap: 24px;
+    font-family: var(--font); /* Urbanist */
+    margin-bottom: 15px; /* Добавил отступ снизу, чтобы отделить от следующего блока */
 }
-.feature-item {
-    flex-basis: 200px; /* Базовая ширина колонки */
-    flex-grow: 1; /* Позволит им растягиваться */
+
+/* 2. Верхний блок (контент) */
+.new-sba-top-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* 3. Секция заголовка и баннера */
+.new-sba-header {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 0 24px 24px;
+}
+
+.new-sba-title {
+    font-family: var(--font);
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0;
+    text-transform: capitalize;
+    padding: 14px 0;
+    margin: 0;
+    color: #232323; /* Взял цвет из .sba-main-title */
+}
+
+/* 4. Зеленый баннер */
+.new-sba-banner {
+    border-left: 2px solid var(--theme-green); /* #159C2A */
+    background-color: #00800008;
+    padding: 7px 14px;
+}
+
+.new-sba-banner p {
+    font-family: 'Merriweather', serif; /* Как ты и указал, нужен этот шрифт */
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
+    letter-spacing: 0;
+    color: #0D661A;
+    margin: 0;
+}
+
+/* 5. Секция с текстом */
+.new-sba-text-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 0 24px;
+}
+
+.bg-grey {
+    background-color: #F9F9F9 !important;
+}
+
+.py-24 {
+    padding-block: 24px !important;
+}
+
+.pb-0 {
+    padding-bottom: 0 !important;
+}
+
+.pt-14 {
+    padding-top: 14px !important;
+}
+
+.new-sba-pros-cons-title {
+    font-family: var(--font);
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0;
+    text-transform: capitalize;
+    padding: 7px 0;
+    margin: 0;
+    color: #0D661A;
+}
+
+.new-sba-subtitle {
+    font-family: var(--font);
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0;
+    text-transform: capitalize;
+    padding: 14px 0;
+    margin: 0;
+    color: #232323; /* Взял цвет из .sba-subtitle */
+}
+
+.new-sba-h3 {
+    font-family: var(--font);
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0;
+    text-transform: capitalize;
+    padding: 14px 0;
+    margin: 0;
+    color: #232323; /* Взял цвет из .sba-subtitle */
+}
+
+/* 6. Параграфы */
+.new-sba-paragraphs p {
+    font-family: var(--font);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0;
+    color: #444; /* Взял цвет из .sba-section p */
+    margin: 0;
+}
+
+.new-sba-paragraphs p:not(:last-child) {
+    margin-bottom: 14px; /* Отступ между параграфами */
+}
+
+/* 7. Нижний блок (Иконки) */
+.new-sba-features {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; 
+    gap: 100px; /* Расстояние между блоками */
+    padding: 24px;
+    text-align: center;
+}
+
+.new-sba-feature-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 180px; /* Минимальная ширина */
+    max-width: 125px;
 }
 
-/* Стилизация иконок */
-.feature-icon-wrapper {
+.new-sba-feature-item--long {
+    max-width: 175px;
+}
+
+.new-sba-feature-icon {
+    color: var(--theme-green);
+    font-size: 48px; /* Подобрал размер по скриншоту */
+    margin-bottom: 24px;
+    line-height: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 60px;
-    height: 60px;
-    /* Используем фирменные цвета из твоего CSS */
-    background-color: #E8F6EA; /* Светло-зеленый фон */
-    color: #159C2A;           /* Темно-зеленый цвет иконки */
-    font-size: 24px;
-    margin-bottom: 15px;
-}
-.icon-circle {
-    border-radius: 50%; /* Делает первый блок круглым */
-}
-.icon-rect {
-    border-radius: 8px; /* Делает 2 и 3 блоки прямоугольными */
 }
 
-/* Текст в колонках */
-.feature-title {
-    font-family: 'Public Sans', sans-serif;
+.new-sba-feature-item--long .new-sba-feature-icon {
+    height: 120px;
+}
+
+.new-sba-feature-title {
+    font-family: var(--font);
+    font-weight: 600;
     font-size: 16px;
-    font-weight: 700;
-    color: #232323;
+    line-height: 24px;
+    letter-spacing: 0;
+    margin-bottom: 4px;
     margin-top: 0;
-    margin-bottom: 5px;
-}
-.feature-detail {
-    font-family: 'Public Sans', sans-serif;
-    font-size: 14px;
-    color: #555;
-    margin: 0;
+    color: #232323; /* Взял цвет из .feature-title */
 }
 
-/* 6. Секция "Types of SBA Loans" */
-.sba-loan-types {
+.new-sba-feature-detail {
+    font-family: var(--font);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0;
+    text-align: center;
+    margin: 0;
+    color: #232323; /* Взял цвет из .feature-detail */
+}
+
+/* --- Стили для блока "Types Of SBA Loans" --- */
+
+/* Контейнер для списка */
+.new-sba-list-content {
+    padding: 0 24px; /* Сохраняем боковые отступы, как у .new-sba-text-content */
+}
+
+/* Стилизация списка */
+.new-sba-loan-types {
     list-style: none; /* Убираем стандартные маркеры */
     padding-left: 0;
-    margin-top: 25px;
+    margin: 0;
     counter-reset: loan-counter; /* Инициализируем CSS-счетчик */
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Отступ между элементами списка */
 }
 
-.sba-loan-types li {
+.new-sba-loan-types li {
     position: relative; /* Нужно для позиционирования номера */
-    padding-left: 45px; /* Место для кастомного номера */
-    margin-bottom: 20px; /* Отступ между пунктами */
+    padding-left: 35px; /* Место для кружка (25px) + отступ (10px) */
     counter-increment: loan-counter; /* Увеличиваем счетчик для каждого <li> */
+    display: flex; /* Для вертикального выравнивания кружка и текста */
+    align-items: flex-start; /* Выравнивание по верху */
+    min-height: 25px; /* Минимальная высота, равная кружку */
 }
 
-.sba-loan-types li::before {
+.new-sba-loan-types li::before {
     content: counter(loan-counter); /* Отображаем значение счетчика */
     position: absolute;
     left: 0;
-    top: 0; /* Выравниваем по верху текста */
+    top: 3px; /* Выравниваем по верху */
     
     /* Стилизация кружка с номером */
-    width: 28px;
-    height: 28px;
+    width: 25px;
+    height: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0; /* Запрещаем кружку сжиматься */
     border-radius: 50%;
-    background-color: #159C2A; /* Зеленый цвет из твоего CSS */
+    background-color: var(--theme-green); /* Зеленый цвет */
     color: #fff;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 1; /* Для точного центрирования текста */
+    
+    /* Стили текста в кружке */
+    font-family: var(--font);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1; /* 100% */
+    letter-spacing: 0;
+    text-transform: capitalize;
 }
 
-.sba-loan-types li p {
-    margin: 0; /* Убираем отступы у параграфа внутри списка */
-    padding-top: 2px; /* Немного опускаем текст, чтобы он был по центру кружка */
+.new-sba-loan-types li p {
+    margin: 0;
+    /* Стили текста из .new-sba-paragraphs p */
+    font-family: var(--font);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0;
+    color: #232323; 
+    /* Небольшая корректировка для идеального 
+      визуального выравнивания с кружком 
+    */
+    padding-top: 1px; 
 }
 
-.sba-loan-types li p strong {
+.new-sba-loan-types li p strong {
     color: #232323; /* Делаем заголовок пункта темнее */
     font-weight: 700;
 }
 
-/* 7. Секция со списком (чек-лист) */
-.sba-checklist {
-    list-style: none; /* Убираем стандартные маркеры */
+/* --- Стили для блока "How Do SBA Loans Work" (список с галочками) --- */
+.new-sba-checklist {
+    list-style: none;
     padding-left: 0;
-    margin-top: 25px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Такой же отступ, как у .new-sba-loan-types */
 }
 
-.sba-checklist li {
+.new-sba-checklist li {
     position: relative;
-    padding-left: 45px; /* Место для иконки-галочки */
-    margin-bottom: 20px; /* Отступ между пунктами */
+    padding-left: 35px; /* 25px (иконка) + 10px (отступ) */
+    display: flex;
+    align-items: flex-start;
+    min-height: 25px;
 }
 
-.sba-checklist li::before {
-    /* Используем иконку "check-circle" из Font Awesome.
-      Она у тебя уже подключена в <head>.
-    */
-    content: "\f058"; /* Это код иконки "fa-solid fa-check-circle" */
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900; /* 900 = "solid" */
+.new-sba-checklist li::before {
+    content: '';
     
     position: absolute;
     left: 0;
-    top: 0;
+    top: 3px; /* Выравнивание как у .new-sba-loan-types */
     
-    /* Стилизация самой иконки */
-    color: #159C2A; /* Твой фирменный зеленый */
-    font-size: 28px;  /* Размер, как у кружков с цифрами */
-    line-height: 1;
-    
-    /* Нужно, чтобы у иконки был белый фон "внутри", 
-      но сама иконка fa-check-circle уже сплошная (solid).
-      Если бы иконка была контурной, понадобился бы background-color.
-    */
-}
-
-.sba-checklist li p {
-    margin: 0;
-    padding-top: 2px; /* Легкое выравнивание текста по центру иконки */
-}
-
-.sba-checklist li p strong {
-    color: #232323;
-    font-weight: 700;
-}
-
-/* 8. Стили для "Pros" и "Cons" */
-.sba-pros-cons-title {
-    font-family: 'Public Sans', sans-serif;
-    font-size: 18px;
-    font-weight: 700;
-    color: #232323;
-    margin-top: 20px;
-    margin-bottom: 15px;
-}
-
-/* 9. Разделитель (серая линия) */
-.sba-divider {
-    border: none;
-    border-top: 1px solid #eee;
-    margin: 40px 0;
-}
-
-/* 10. Альтернативный стиль для блока с иконками */
-.sba-features-alt {
-    margin-top: 0; /* Убираем верхний отступ, т.к. есть разделитель */
-}
-
-.feature-icon-wrapper-alt {
+    width: 25px; /* Контейнер для иконки */
+    height: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 60px; /* Та же ширина, что и у первых иконок */
-    height: 60px; /* Та же высота */
-    color: #159C2A; /* Твой фирменный зеленый */
-    font-size: 48px; /* Иконки крупнее */
-    margin-bottom: 15px;
+    flex-shrink: 0;
+    
+    background-color: var(--theme-green); /* Без фона */
+    background-image: url("data:image/svg+xml,%3Csvg width='13' height='9' viewBox='0 0 13 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.57687 7.22823L0.919266 3.70585L0 4.59134L4.57683 9L13 0.885489L12.0807 0L4.57687 7.22823Z' fill='white'/%3E%3C/svg%3E%0A");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 13px;
+    border-radius: 50%;
 }
 
-/* Убедимся, что у .feature-detail правильные отступы для этого блока */
-.sba-features-alt .feature-detail {
-    max-width: 220px; /* Ограничим ширину текста */
-    margin-left: auto;
-    margin-right: auto;
+.new-sba-checklist li p {
+    margin: 0;
+    /* Стили текста из .new-sba-paragraphs p */
+    font-family: var(--font);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0;
+    color: #444; 
+    padding-top: 1px; /* Выравнивание как у .new-sba-loan-types li p */
 }
 
-/* 11. Секция FAQ */
-.sba-faq-list {
-    border-top: 1px solid #eee;
+.new-sba-checklist li p strong {
+    color: #232323; /* Как у .new-sba-loan-types li p strong */
+    font-weight: 700;
 }
 
-.faq-item {
-    border-bottom: 1px solid #eee;
+.new-sba-text-footer {
+    padding: 24px;
 }
 
-.faq-question {
+/* --- Стили для блока "Documents" --- */
+.new-sba-documents-list {
+    list-style: none;
+    padding: 0;
+    margin: 7px 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px; /* Отступ между элементами списка */
+}
+
+.new-sba-document-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 5px; /* Немного отступа по бокам */
-    cursor: pointer;
-    list-style: none; /* Убираем стандартный маркер <summary> */
-    width: 100%;
+    flex-wrap: wrap; /* Для мобильных, если кнопка не поместится */
+    gap: 15px; /* Отступ между инфо и кнопкой на мобильных */
 }
 
-/* Убираем стандартный маркер для Webkit (Chrome, Safari) */
-.faq-question::-webkit-details-marker {
+.new-sba-document-info {
+    display: flex;
+    align-items: center;
+    gap: 7px; /* Отступ между иконкой и текстом */
+}
+
+.new-sba-document-info svg {
+    width: 24px;
+}
+
+.new-sba-document-details {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.document-name {
+    font-family: var(--font);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #232323;
+}
+
+.document-size {
+    font-family: var(--font);
+    color: #808080;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    text-transform: capitalize;
+}
+
+.new-sba-download-btn {
+    background-color: var(--theme-green);
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 3px 10px;
+    font-family: var(--font);
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.new-sba-download-btn:hover {
+    background-color: var(--theme-green-dark); /* Используем переменную для ховера */
+}
+
+/* --- Стили для блока FAQ --- */
+.new-sba-faq-container {
+    margin-top: 15px; /* Отступ от списка документов */
+}
+
+.new-sba-faq-container h3 {
+    text-align: center;
+    margin-bottom: 7px;
+}
+
+.new-sba-faq-item {
+    margin-bottom: 14px;
+}
+
+.new-sba-faq-item summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 14px;
+    cursor: pointer;
+    list-style: none;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #C4C4C4B2;
+    border-radius: 3px;
+}
+
+/* Убираем стандартный маркер (стрелку) в WebKit-браузерах */
+.new-sba-faq-item summary::-webkit-details-marker {
     display: none;
 }
 
-.faq-question-text {
-    font-family: 'Public Sans', sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    color: #333;
-    transition: color 0.2s ease;
-}
-
-.faq-icon-wrapper {
-    color: #888;
-    font-size: 14px;
-    transition: color 0.2s ease;
-}
-
-/* Показываем стрелку вправо по умолчанию */
-.faq-item .faq-icon.fa-arrow-down { display: none; }
-.faq-item .faq-icon.fa-arrow-right { display: inline-block; }
-
-/* При [open] - показываем стрелку вниз и прячем стрелку вправо */
-.faq-item[open] > .faq-question {
-    /* На скриншоте открытый вопрос становится зеленым */
-    color: #159C2A; 
-}
-.faq-item[open] .faq-question-text {
-    color: #159C2A;
+.faq-question {
+    font-family: var(--font);
     font-weight: 600;
-}
-.faq-item[open] .faq-icon-wrapper {
-    color: #159C2A;
-}
-
-.faq-item[open] .faq-icon.fa-arrow-down { display: inline-block; }
-.faq-item[open] .faq-icon.fa-arrow-right { display: none; }
-
-.faq-answer {
-    padding-bottom: 25px;
-    padding-left: 5px; /* Небольшой отступ для контента */
-    padding-right: 5px;
-}
-.faq-answer p {
-    font-family: 'Public Sans', sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    color: #444;
-    margin-bottom: 15px;
-}
-.faq-answer p:last-child {
-    margin-bottom: 0;
+    font-size: 16px; /* Как .new-sba-h3 */
+    line-height: 19px;
+    color: #232323;
 }
 
-
-/* 12. Блок загрузки файлов */
-.sba-file-downloads {
-    margin-top: 25px;
-    border-top: 1px solid #eee;
-    padding-top: 25px;
-}
-.file-download-item {
-    display: flex;
-    align-items: center;
-    padding-bottom: 20px;
-    flex-wrap: wrap; /* Для мобильных */
-}
-.file-download-item:last-child {
-    padding-bottom: 0;
+.new-sba-faq-icons {
+    flex-shrink: 0; /* Не сжимать иконки */
+    margin-left: 15px;
+    color: var(--theme-green);
 }
 
-.file-download-item .file-icon {
-    font-size: 28px;
-    color: #555;
-    margin-right: 15px;
-    width: 30px;
-    text-align: center;
+/* Логика переключения иконок */
+.new-sba-faq-icons .icon-arrow-down {
+    display: none;
 }
-.file-download-item .fa-file-pdf {
-    color: #e64b3c; /* PDF красный */
-}
-.file-download-item .fa-file-lines {
-    color: #2a5699; /* Word/Doc синий */
+.new-sba-faq-icons .icon-arrow-right {
+    display: block;
 }
 
-
-.file-info {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    margin-right: 15px; /* Отступ от кнопки */
-}
-.file-name {
-    font-size: 16px;
-    font-weight: 500;
-    color: #333;
-}
-.file-size {
-    font-size: 14px;
-    color: #777;
+/* Стили для ОТКРЫТОГО состояния */
+.new-sba-faq-item[open] > summary {
+    background-color: #E8F6EA;
+    border-color: #E8F6EA;
 }
 
-.download-btn {
-    display: inline-flex;
-    align-items: center;
-    background-color: #159C2A; /* Зеленый фон */
-    border: 1px solid #159C2A;
-    border-radius: 6px;
-    padding: 8px 15px;
-    text-decoration: none;
-    color: #fff; /* Белый текст */
-    font-weight: 600;
-    font-size: 14px;
-    transition: background-color 0.2s ease;
-    margin-top: 10px; /* Отступ для мобильных */
-    flex-shrink: 0; /* Не сжимать кнопку */
+.new-sba-faq-item[open] > summary .faq-question {
+    color: #0D661A;
 }
 
-.download-btn:hover {
-    background-color: #128a24; /* Чуть темнее зеленый */
+.new-sba-faq-item[open] > summary .new-sba-faq-icons .icon-arrow-down {
+    display: block;
 }
-.download-btn .fa-download {
-    margin-right: 8px;
+.new-sba-faq-item[open] > summary .new-sba-faq-icons .icon-arrow-right {
+    display: none;
 }
 
-/* Адаптация для мобильных */
-@media (min-width: 500px) {
-    .file-download-item {
-        flex-wrap: nowrap; /* Возвращаем в одну строку */
-    }
-    .download-btn {
-        margin-top: 0; /* Убираем отступ */
-    }
+/* Контентная часть */
+.new-sba-faq-content {
+    background-color: #F6FBF6;
+    padding: 24px;
+}
+
+/* Переопределяем стили для списков ВНУТРИ FAQ, 
+  чтобы убрать лишние боковые отступы, 
+  так как они уже есть у .new-sba-faq-content 
+*/
+.new-sba-faq-content .new-sba-checklist,
+.new-sba-faq-content .new-sba-paragraphs,
+.new-sba-faq-content .new-sba-documents-list {
+    padding-left: 0;
+    padding-right: 0;
 }
