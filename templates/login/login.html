@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta Tags -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="googlebot" content="noindex">
+
+    <title>Fundshop Log In</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../../assets/images/favicon.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Third Party CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-file-upload/4.0.11/uploadfile.min.css">
+    <!-- <link rel="stylesheet" href="https://fstscm.web-dev-project.com/assets/admin/base/css/jquery.filer/jquery.filer.css"> -->
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../../assets/css/font-base.css">
+    <link rel="stylesheet" href="../../assets/css/style-cp.css">
+    <link rel="stylesheet" href="../../assets/css/jquery.filer-dragdropbox-theme.css">
+    <link rel="stylesheet" href="../../assets/css/style-original.css">
+    <link rel="stylesheet" href="../../assets/css/style-client.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/notification.css">
+
+    <link rel="stylesheet" href="login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body class="cp_body">
+    <!-- Demo Menu Start -->
+    <link rel="stylesheet" href="../../!demo-menu/demo-menu.css">
+    <div id="demoMenu" class="demo-menu">
+        <a href="javascript:void(0)" class="demo-menu__close-btn" onclick="closeNav()">
+            <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M0.835683 0.335683C0.941822 0.229276 1.06791 0.144854 1.20673 0.0872515C1.34554 0.0296493 1.49436 0 1.64465 0C1.79494 0 1.94376 0.0296493 2.08257 0.0872515C2.22139 0.144854 2.34748 0.229276 2.45362 0.335683L8.5003 6.38465L14.547 0.335683C14.6532 0.229448 14.7793 0.145178 14.9181 0.0876841C15.0569 0.0301901 15.2057 0.000598232 15.3559 0.000598232C15.5062 0.000598232 15.655 0.0301901 15.7938 0.0876841C15.9326 0.145178 16.0587 0.229448 16.1649 0.335683C16.2712 0.441918 16.3554 0.568038 16.4129 0.70684C16.4704 0.845643 16.5 0.994411 16.5 1.14465C16.5 1.29489 16.4704 1.44366 16.4129 1.58246C16.3554 1.72126 16.2712 1.84738 16.1649 1.95362L10.1159 8.0003L16.1649 14.047C16.2712 14.1532 16.3554 14.2793 16.4129 14.4181C16.4704 14.5569 16.5 14.7057 16.5 14.8559C16.5 15.0062 16.4704 15.155 16.4129 15.2938C16.3554 15.4326 16.2712 15.5587 16.1649 15.6649C16.0587 15.7712 15.9326 15.8554 15.7938 15.9129C15.655 15.9704 15.5062 16 15.3559 16C15.2057 16 15.0569 15.9704 14.9181 15.9129C14.7793 15.8554 14.6532 15.7712 14.547 15.6649L8.5003 9.61595L2.45362 15.6649C2.34738 15.7712 2.22126 15.8554 2.08246 15.9129C1.94366 15.9704 1.79489 16 1.64465 16C1.49441 16 1.34564 15.9704 1.20684 15.9129C1.06804 15.8554 0.941918 15.7712 0.835683 15.6649C0.729448 15.5587 0.645178 15.4326 0.587684 15.2938C0.53019 15.155 0.500598 15.0062 0.500598 14.8559C0.500598 14.7057 0.53019 14.5569 0.587684 14.4181C0.645178 14.2793 0.729448 14.1532 0.835683 14.047L6.88465 8.0003L0.835683 1.95362C0.729276 1.84748 0.644854 1.72139 0.587251 1.58257C0.529649 1.44376 0.5 1.29494 0.5 1.14465C0.5 0.994358 0.529649 0.845542 0.587251 0.706726C0.644854 0.56791 0.729276 0.441822 0.835683 0.335683Z"
+                    fill="#808080" />
+            </svg>
+        </a>
+        <a href="../../index.html" class="demo-menu__link">Main</a>
+        <a href="../../templates/details/details.html" class="demo-menu__link">Details</a>
+        <a href="../../templates/edit/edit.html" class="demo-menu__link">Edit</a>
+        <a href="../../templates/pipelines/pipelines.html" class="demo-menu__link">Pipelines</a>
+        <a href="../../templates/blog/blog.html" class="demo-menu__link">Blog</a>
+        <a href="../../templates/post/post.html" class="demo-menu__link">Post</a>
+        <a href="../../templates/login/login.html" class="demo-menu__link">Login</a>
+    </div>
+
+    <button class="demo-menu-button" onclick="openNav()">&#9776; Demo</button>
+    <script src="../../!demo-menu/demo-menu.js"></script>
+    <!-- Demo Menu End -->
+
+    <div class="login-wrapper">
+        <div class="login-panel">
+            <div class="login-form-container">
+                <div id="lottie-logo" class="lottie-logo-container"></div>
+
+                <h2>Log <span>in</span></h2>
+
+                <form id="login-form" novalidate>
+                    <div class="form-group">
+                        <svg class="form-icon" width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.3218 0.101562H1.21073C0.597917 0.101562 0.0996094 0.59987 0.0996094 1.21268V8.99047C0.0996094 9.60326 0.597917 10.1016 1.21073 10.1016H12.3218C12.9346 10.1016 13.4329 9.60326 13.4329 8.99044V1.21268C13.4329 0.59987 12.9346 0.101562 12.3218 0.101562ZM1.21073 0.657109H12.3218C12.3628 0.657109 12.3989 0.672031 12.4373 0.680469C11.4753 1.56086 8.28563 4.47888 7.1694 5.48458C7.08206 5.56326 6.94128 5.65711 6.7663 5.65711C6.59133 5.65711 6.45055 5.56325 6.36292 5.48432C5.2468 4.47878 2.05693 1.5606 1.09513 0.680521C1.13362 0.672083 1.16977 0.657109 1.21073 0.657109ZM0.655156 8.99044V1.21268C0.655156 1.15826 0.671562 1.10888 0.68625 1.05914C1.4225 1.73299 3.64812 3.76904 5.09125 5.08135C3.65281 6.31695 1.42661 8.42758 0.684505 9.13523C0.671406 9.08799 0.655156 9.0418 0.655156 8.99044ZM12.3218 9.54601H1.21073C1.16635 9.54601 1.1269 9.53055 1.08547 9.52065C1.85232 8.78961 4.09268 6.66685 5.50583 5.45792C5.69005 5.62503 5.85833 5.7774 5.99099 5.89693C6.21995 6.10365 6.48794 6.21268 6.76628 6.21268C7.04461 6.21268 7.3126 6.10362 7.54128 5.89719C7.67398 5.7776 7.8424 5.6251 8.02672 5.45792C9.43995 6.66672 11.68 8.78932 12.4471 9.52065C12.4057 9.53055 12.3663 9.54601 12.3218 9.54601ZM12.8774 8.99044C12.8774 9.04177 12.8611 9.08799 12.8481 9.13523C12.1057 8.42721 9.87974 6.31682 8.44133 5.08138C9.8845 3.76906 12.1098 1.7332 12.8463 1.05909C12.861 1.10883 12.8774 1.15823 12.8774 1.21266V8.99044Z" fill="#159C2A" stroke="#159C2A" stroke-width="0.2"/>
+                        </svg>
+                        <input type="email" id="email" class="form-control" placeholder="Email" required>
+                        <span class="error-msg" id="email-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <svg class="form-icon" style="margin-left: 2px;" width="10" height="13" viewBox="0 0 10 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4.00881 8.40578L3.85109 9.82398C3.84329 9.89453 3.86598 9.96534 3.91334 10.0183C3.96071 10.0713 4.02859 10.1016 4.09963 10.1016H5.09963C5.17067 10.1016 5.23855 10.0713 5.28592 10.0183C5.33328 9.96536 5.35599 9.89455 5.34816 9.82398L5.19045 8.40578C5.44656 8.2195 5.59963 7.92482 5.59963 7.60157C5.59963 7.05006 5.15115 6.60156 4.59962 6.60156C4.04809 6.60156 3.59961 7.05006 3.59961 7.60157C3.59961 7.92482 3.7527 8.2195 4.00881 8.40578ZM4.59962 7.10158C4.87524 7.10158 5.09961 7.32595 5.09961 7.60157C5.09961 7.79322 4.99072 7.96485 4.81543 8.04981C4.71997 8.0962 4.66407 8.19728 4.67579 8.30249L4.82033 9.60156H4.37893L4.52347 8.30249C4.53519 8.19726 4.47929 8.0962 4.38383 8.04981C4.20854 7.96485 4.09965 7.79322 4.09965 7.60157C4.09963 7.32595 4.32399 7.10158 4.59962 7.10158Z" fill="#159C2A" stroke="#159C2A" stroke-width="0.2"/>
+                            <path d="M8.8496 4.60156H8.0996V3.60155C8.0996 1.67164 6.52955 0.101562 4.59961 0.101562C2.66967 0.101562 1.09962 1.67164 1.09962 3.60155V4.60156H0.349617C0.21143 4.60156 0.0996094 4.71338 0.0996094 4.85157V11.1016C0.0996094 11.6531 0.548086 12.1016 1.09962 12.1016H8.09963C8.65113 12.1016 9.09961 11.6531 9.09961 11.1016V4.85157C9.09961 4.71338 8.98779 4.60156 8.8496 4.60156ZM1.59961 3.60155C1.59961 1.94727 2.94532 0.601555 4.59961 0.601555C6.2539 0.601555 7.59961 1.94727 7.59961 3.60155V4.60156H7.09962V3.60155C7.09962 2.22312 5.97804 1.10155 4.59961 1.10155C3.22118 1.10155 2.0996 2.22315 2.0996 3.60155V4.60156H1.59961V3.60155ZM6.5996 3.60155V4.60156H2.59962V3.60155C2.59962 2.49877 3.49683 1.60156 4.59961 1.60156C5.70239 1.60156 6.5996 2.49877 6.5996 3.60155ZM8.59962 11.1016C8.59962 11.3772 8.37525 11.6015 8.09963 11.6015H1.09962C0.823992 11.6015 0.599625 11.3772 0.599625 11.1016V5.10155H8.59962V11.1016Z" fill="#159C2A" stroke="#159C2A" stroke-width="0.2"/>
+                        </svg>
+                        <input type="password" id="password" class="form-control" placeholder="Password" required>
+                        <span class="error-msg" id="password-error"></span>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="rememberMe">
+                            <span class="checkbox-icon"></span>
+                            <span class="checkbox-text">Remember Me</span>
+                        </label>
+                        <a href="#" class="forgot-password-link">Forgot Password</a>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Log In</button>
+                </form>
+            </div>
+
+            <div class="login-create-account">
+                <p>Don't have an account yet?</p>
+                <button type="button" class="btn btn-secondary">Create Your Account</button>
+            </div>
+        </div>
+
+        <div class="info-panel">
+            <div class="info-content">
+                <h1>YOUR DILIGENT SUPPLIER</h1>
+                <p>OF WORKING CAPITAL UP TO $1,000,000!</p>
+            </div>
+            <div class="info-footer">
+                <span>© 2018 fundshop. All Rights Reserved.</span>
+                <a href="#">Disclaimer</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Third Party JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-file-upload/4.0.11/jquery.uploadfile.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+
+    <!-- Main JavaScript -->
+    <script src="../../assets/js/jquery.inputmask.min.js"></script>
+    <script type="module" src="../../assets/js/main-original.js"></script>
+    <script type="module" src="../../assets/js/notification-original.js"></script>
+    <script type="module" src="../../assets/js/main.js"></script>
+    <script type="module" src="../../assets/js/burger.js"></script>
+    <script type="module" src="../../assets/js/notification.js"></script>
+
+    <!-- Current -->
+    <script src="login.js"></script>
+</body>
+
+</html>

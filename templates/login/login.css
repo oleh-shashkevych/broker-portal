@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --theme-green: #159C2A;
+    --theme-green-hover: #117a21; /* Трохи темніший для hover */
+    --text-dark: #232323;
+    --text-light: #ffffff;
+    --text-muted: #6c757d;
+    --card-bg: #ffffff;
+    --border-color: #EBEBEB;
+    --error-color: #DB1C10;
+    --font-main: 'Urbanist', sans-serif;
+}
+
+/* =================================== */
+/* ============ МАКЕТ СТОРІНКИ ============ */
+/* =================================== */
+.login-wrapper {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* =================================== */
+/* ============ ЛІВА ПАНЕЛЬ (ФОРМА) ============ */
+/* =================================== */
+.login-panel {
+    flex: 1; /* Дозволяє панелі бути "резиновою" */
+    max-width: 515px; /* Обмежує макс. ширину на десктопі */
+    min-width: 320px; /* Мін. ширина для моб. пристроїв */
+    display: flex;
+    flex-direction: column;
+    background-color: var(--card-bg);
+}
+
+.login-form-container {
+    flex-grow: 1; /* Займає вільне місце, щоб притиснути футер */
+    padding: 70px 95px 70px 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.lottie-logo-container {
+    width: 258px;
+    margin: 0 auto 30px;
+}
+
+.login-form-container h2 {
+    font-size: 35px;
+    line-height: 43px;
+    color: var(--theme-green);
+    margin-bottom: 37px;
+    font-family: var(--font-main);
+    font-weight: 700;
+}
+
+.login-form-container h2 span {
+    font-weight: 500;
+}
+
+/* Секція "Create Account" */
+.login-create-account {
+    background-color: var(--theme-green);
+    color: var(--text-light);
+    padding: 0 95px 0 70px;
+    text-align: center;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+}
+
+.login-create-account p {
+    font-size: 26px;
+    line-height: 32px;
+    font-weight: 500;
+}
+
+/* =================================== */
+/* ============ ПРАВА ПАНЕЛЬ (ІНФО) ============ */
+/* =================================== */
+.info-panel {
+    flex: 1; /* Займає вдвічі більше місця ніж ліва */
+    background: url('img/background.jpg') no-repeat center center;
+    background-size: cover;
+    color: var(--text-light);
+    padding: 30px 70px 30px 8.5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.info-content {
+    padding-top: 150px;
+    max-width: 500px;
+}
+
+.info-content h1 {
+    font-size: 65px;
+    line-height: 79px;
+    margin-bottom: 17px;
+    text-transform: uppercase;
+}
+
+.info-content p {
+    font-size: 22px;
+    line-height: 27px;
+}
+
+.info-footer {
+    text-align: right;
+    font-size: 15px;
+    line-height: 1;
+}
+
+.info-footer a {
+    text-decoration: underline;
+}
+
+/* =================================== */
+/* ============ ФОРМА ============ */
+/* =================================== */
+.form-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.form-icon {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.form-control {
+    width: 100%;
+    padding: 11px 20px 12px 41px;
+    font-size: 14px;
+    line-height: 18px;
+    font-family: var(--font-main);
+    border: 1.5px solid var(--border-color);
+    border-radius: 0;
+    font-weight: 600;
+}
+
+.form-control::placeholder {
+    color: #9A9A9A !important;
+}
+
+.form-control:hover {
+    background-color: #F8F8F8;
+    border-color: #C4C4C4B2;
+}
+
+.form-control:focus {
+    outline: none;
+    background-color: #F6FBF6;
+    border-color: #159C2AE5;
+}
+
+/* Валідація */
+.form-control.is-invalid {
+    border-color: var(--error-color);
+    background-color: var(--card-bg);
+}
+
+.form-control.is-invalid:focus {
+
+}
+
+.error-msg {
+    color: var(--error-color);
+    font-size: 12px;
+    display: block;
+    margin-top: 5px;
+    position: absolute;
+    top: 100%;
+    font-weight: 400;
+    line-height: 1;
+}
+
+/* Опції (Checkbox / Forgot pass) */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+/* =================================== */
+/* ============ КНОПКИ ============ */
+/* =================================== */
+.btn {
+    display: block;
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: var(--font-main);
+    text-align: center;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+}
+
+/* "Log In" */
+.btn-primary {
+    background-color: var(--theme-green);
+    color: var(--text-light);
+}
+
+.btn-primary:hover {
+    background-color: var(--theme-green-hover);
+}
+
+/* "Create Your Account" */
+.btn-secondary {
+    background-color: var(--text-light);
+    color: var(--theme-green);
+}
+
+.btn-secondary:hover {
+    background-color: #f0f0f0; /* Легкий сірий для ховеру */
+}
+
+/* Ефект натискання */
+.btn:active {
+    transform: scale(0.98);
+}
+
+
+/* =================================== */
+/* ============ КАСТОМНИЙ ЧЕКБОКС ============ */
+/* =================================== */
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none; /* Заборона виділення тексту */
+}
+
+/* Ховаємо оригінальний чекбокс */
+.checkbox-label input[type="checkbox"] {
+    display: none;
+}
+
+/* Стилі для тексту */
+.checkbox-text {
+    color: #9A9A9A;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+/* Кастомна іконка */
+.checkbox-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #D2D3D3;
+    border-radius: 0;
+    margin-right: 8px;
+    font-size: 12px;
+    color: var(--text-light);
+}
+
+/* Іконка-галочка (Font Awesome) */
+.checkbox-icon::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    content: "\f00c"; /* Код іконки 'check' */
+    opacity: 0; /* Ховаємо галочку */
+}
+
+/* Стан "Checked" */
+.checkbox-label input[type="checkbox"]:checked + .checkbox-icon {
+    background-color: var(--theme-green);
+    border-color: var(--theme-green);
+}
+
+.checkbox-label input[type="checkbox"]:checked + .checkbox-icon::before {
+    opacity: 1; /* Показуємо галочку */
+}
+
+.checkbox-label input[type="checkbox"]:checked ~ .checkbox-text {
+    color: var(--text-dark);
+}
+
+.forgot-password-link {
+    font-size: 12px;
+    line-height: 15px;
+    color: var(--theme-green);
+    text-decoration: underline;
+}
+
+.forgot-password-link:hover {
+    color: var(--theme-green-hover);
+}
+
+/* =================================== */
+/* ============ АДАПТИВНІСТЬ ============ */
+/* =================================== */
+@media (max-width: 900px) {
+    /* На мобільних пристроях ховаємо праву панель */
+    .info-panel {
+        display: none;
+    }
+
+    /* Ліва панель займає всю ширину */
+    .login-panel {
+        max-width: 100%;
+        min-height: 100dvh; /* Займає всю висоту */
+    }
+
+    .login-form-container {
+        padding: 70px 70px 120px; /* Зменшуємо падінги з боків */
+    }
+    
+    .login-create-account {
+        padding: 0 70px;
+        min-height: 235px;
+    }
+
+    .lottie-logo-container {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .login-form-container h2 {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-form-container {
+        padding: 70px 30px;
+    }
+
+    .login-form-container h2 {
+        font-size: 32px;
+    }
+
+    .login-create-account p {
+        font-size: 21px;
+    }
+
+    .login-create-account {
+        padding: 0 30px;
+        min-height: 200px;
+    }
+
+    .form-group,
+    .form-options {
+        margin-bottom: 25px;
+    }
+}
