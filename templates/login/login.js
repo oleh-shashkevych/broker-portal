@@ -71,7 +71,7 @@ $(document).ready(function () {
             // Беремо кадр з 'loaderAnimation', а не з 'e'
 
             
-            const CUT_OFF_FRAME = 90; 
+            const CUT_OFF_FRAME = 120; 
             
             // !!! 2. ВИПРАВЛЕННЯ ТУТ:
             if (loaderAnimation.currentFrame >= CUT_OFF_FRAME) {

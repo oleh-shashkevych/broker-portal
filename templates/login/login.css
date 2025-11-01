@@ -47,10 +47,15 @@
     justify-content: center;
 }
 
-.lottie-logo-container {
+.lottie-logo-container,
+.logo-static {
     width: 258px;
     min-height: 140px;
     margin: 0 auto 30px;
+}
+
+.logo-static svg {
+    width: 100%;
 }
 
 .login-form-container h2 {
@@ -378,7 +383,8 @@
         min-height: 235px;
     }
 
-    .lottie-logo-container {
+    .lottie-logo-container,
+    .logo-static {
         width: 100%;
         max-width: 400px;
     }
