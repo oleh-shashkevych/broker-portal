@@ -19,6 +19,12 @@
     display: flex;
     min-height: 100vh;
     width: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.login-wrapper.is-visible {
+    opacity: 1;
 }
 
 /* =================================== */
@@ -43,6 +49,7 @@
 
 .lottie-logo-container {
     width: 258px;
+    min-height: 140px;
     margin: 0 auto 30px;
 }
 
@@ -89,12 +96,17 @@
     padding: 30px 70px 30px 8.5vw;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    position: relative;
+    justify-content: flex-end;
 }
 
 .info-content {
-    padding-top: 150px;
+    padding-top: 0;
     max-width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .info-content h1 {
@@ -203,6 +215,8 @@
     border: none;
     border-radius: 0;
     cursor: pointer;
+    transition: all .3s ease;
+    margin-inline: auto;
 }
 
 /* "Log In" */
@@ -227,7 +241,7 @@
 
 /* Ефект натискання */
 .btn:active {
-    transform: scale(0.98);
+    width: 98%;
 }
 
 
@@ -298,6 +312,46 @@
 
 .forgot-password-link:hover {
     color: var(--theme-green-hover);
+}
+
+/* =================================== */
+/* ============ PAGE LOADER ============ */
+/* =================================== */
+#page-loader {
+    position: fixed;
+    /* inset: 0; це скорочення для top/right/bottom/left: 0 */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ffffff; /* Білий фон, як ви просили */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    
+    /* Починаємо з прозорістю 0 для плавного з'явлення */
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    pointer-events: none; /* Не блокувати кліки, коли прозорий */
+}
+
+/* Клас для показу лоадера */
+#page-loader.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Клас для приховування лоадера */
+#page-loader.is-hiding {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#loader-lottie-logo {
+    /* Використовуємо ті ж розміри, що й у лого на сторінці */
+    width: 258px;
+    min-height: 140px; 
 }
 
 /* =================================== */
