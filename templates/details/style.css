@@ -1488,3 +1488,170 @@
     color: #232323CC;
     font-family: 'proxima_nova';
 }
+
+/* --- START: Адаптация страницы Details (только .right_cp_bar) --- */
+
+/* 1. Снимаем ограничение по ширине с .right_cp_bar 
+   и задаем отступы для мобильных */
+@media (max-width: 1200px) {
+	.right_cp_bar {
+		min-width: 320px;
+		/* Задаем новую мин. ширину до 320px */
+		width: 100%;
+		padding: 10px;
+		overflow-x: hidden;
+		/* Скрываем собственный горизонтальный скролл */
+	}
+}
+
+/* 2. Перестраиваем колонки контента:
+   Основной контент (.quote_item) и правая колонка чата (.notes_bar) 
+   становятся друг под друга на экранах < 992px */
+@media (max-width: 991.98px) {
+	.content_main-quote {
+		flex-direction: column-reverse;
+		/* Ставим чат/новости сверху */
+	}
+
+	.notes_bar,
+	.chat {
+		width: 100%;
+		max-width: 100%;
+		height: auto;
+		max-height: 60vh;
+		/* Ограничиваем высоту чата/новостей */
+		margin-bottom: 15px;
+	}
+
+	.quote_item-middle {
+		display: none;
+		/* Скрываем боковые кнопки переключения чата */
+	}
+}
+
+/* 3. Делаем таблицы "Pre-Approvals" и "Contact Directory"
+   горизонтально прокручиваемыми, так как они слишком широкие. */
+@media (max-width: 991.98px) {
+
+	.quotes_referral-table,
+	.contact_directory-items {
+		display: block;
+		overflow-x: auto;
+		white-space: nowrap;
+	}
+
+	/* Задаем минимальную ширину для таблиц, чтобы появилась прокрутка */
+	.quotes_referral-table--top,
+	.quotes_referral-table--item {
+		min-width: 1200px;
+	}
+
+	.quotes_referral-table--top > div,
+	.quotes_referral-table--item > div {
+		text-wrap: wrap;
+	}
+
+	.contact_directory-items--top,
+	.contact_directory-item {
+		min-width: 700px;
+	}
+}
+
+/* 4. Адаптация блока "Business Details" */
+@media (max-width: 767.98px) {
+	.quote_item-info--wrapper {
+		flex-direction: column;
+		/* Ставим колонки друг под друга */
+		gap: 10px;
+	}
+
+	.quote_item-info--left,
+	.quote_item-info--right {
+		width: 100%;
+		gap: 10px;
+	}
+
+	.quote_item-info--left_status {
+		flex-basis: 150px;
+		/* Фиксируем ширину левой колонки (лейблов) */
+		flex-shrink: 0;
+	}
+}
+
+
+/* 5. Финальные правки для самых маленьких экранов */
+@media (max-width: 575.98px) {
+	.details__wrapper {
+		padding: 8px 5px 16px;
+		/* Уменьшаем отступы по бокам */
+	}
+
+	/* Заголовок страницы (Johnson City...) */
+	.quote_item-top {
+		flex-direction: column;
+		gap: 10px;
+		align-items: flex-start;
+	}
+
+	.quote_item-top--left {
+		height: auto;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 10px;
+		width: 100%;
+	}
+
+	.quote_item-top--right {
+		width: 100%;
+		justify-content: flex-start;
+		padding-left: 10px;
+	}
+
+	.quote_item-title {
+		font-size: 20px;
+	}
+
+	/* Уменьшаем внутренние отступы у всех блоков */
+	.quote_item-info,
+	.quotes_referral,
+	.contact_directory,
+	.sub_attachments {
+		padding: 15px 10px;
+	}
+
+	.quote_item-info--title,
+	.quotes_referral__title,
+	.quote_item-block--title {
+		font-size: 20px;
+		/* Уменьшаем заголовки блоков */
+	}
+
+	/* Кнопка "Add contact" */
+	.contact_directory-top {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 15px;
+	}
+
+	/* Блок "Submission Attachments" - делаем в 2 колонки */
+	.sub_attachments__list {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 10px;
+	}
+
+	.sub_attachments .document-item {
+		margin: 0;
+		padding-bottom: 10px;
+		border-bottom: 1px solid #E8E9E8;
+	}
+}
+
+/* На экранах <= 400px делаем аттачменты в 1 колонку */
+@media (max-width: 400px) {
+	.sub_attachments__list {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* --- END: Адаптация страницы Details --- */

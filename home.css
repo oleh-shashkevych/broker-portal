@@ -952,7 +952,17 @@
     .goal_chart-blocks .goal_chart-monthly {
         grid-column: span 2;
         flex-direction: row;
-        gap: 50px;
+        gap: 20px;
+        padding-inline: 10px;
+    }
+
+    .goal_chart-funded_amount, 
+    .goal_chart-monthly_amount {
+        font-size: 16px;
+    }
+
+    .revenue_user {
+        padding: 2px 0;
     }
 
     .revenue_user p {
@@ -998,6 +1008,10 @@
 
     .header_cp_bar {
         padding: 0 20px;
+    }
+
+    .application_submitted-text {
+        max-width: unset;
     }
 }
 
