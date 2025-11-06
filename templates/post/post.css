@@ -499,3 +499,89 @@
     padding-left: 0;
     padding-right: 0;
 }
+
+/* --- START: Адаптация страницы Post (внутри .right_cp_bar) --- */
+
+/* 1. Снимаем ограничение по ширине с .right_cp_bar (глобально) */
+@media (max-width: 1200px) {
+	.right_cp_bar {
+		min-width: 320px;
+		width: 100%;
+		padding: 10px;
+		overflow-x: hidden;
+	}
+}
+
+/* 2. Уменьшаем боковые отступы для всех контентных блоков */
+@media (max-width: 575.98px) {
+
+	.post-wrapper {
+		/* Убираем отступы у главной обертки */
+		padding: 0;
+	}
+
+	.new-sba-block {
+		/* Убираем отступы у самих блоков */
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	/* Уменьшаем боковые отступы у всех дочерних элементов */
+	.new-sba-header,
+	.new-sba-text-content,
+	.new-sba-features,
+	.new-sba-list-content,
+	.new-sba-text-footer,
+	.new-sba-faq-content {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	/* 3. Уменьшаем заголовки */
+	.new-sba-title,
+	.new-sba-subtitle,
+	.new-sba-pros-cons-title {
+		font-size: 20px;
+	}
+
+	.new-sba-h3 {
+		font-size: 18px;
+	}
+
+	.faq-question {
+		font-size: 15px;
+	}
+
+	/* 4. Уменьшаем гигантский отступ (gap) между иконками */
+	.new-sba-features {
+		gap: 40px;
+		/* Было 100px */
+	}
+
+	/* 5. Уменьшаем отступы у списков, чтобы текст был ближе к иконке */
+	.new-sba-loan-types li,
+	.new-sba-checklist li {
+		padding-left: 32px;
+		/* Было 35px */
+	}
+
+	.new-sba-loan-types li::before,
+	.new-sba-checklist li::before {
+		top: 2px;
+		/* Чуть-чуть ровняем иконку/цифру */
+	}
+
+	/* 6. Адаптация списка документов в FAQ */
+	.new-sba-document-item {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 10px;
+	}
+
+	.new-sba-download-btn {
+		width: 100%;
+		justify-content: center;
+	}
+}
+
+/* --- END: Адаптация страницы Post --- */
