@@ -1291,3 +1291,98 @@ body {
     outline: none;
     box-shadow: none;
 }
+
+/* --- START: Адаптация страницы Edit (внутри .right_cp_bar) --- */
+
+/* 1. Адаптация блоков .client-content (уменьшаем отступы) */
+@media (max-width: 575.98px) {
+	.client-form {
+		padding: 0;
+	}
+
+	.client-content {
+		padding: 15px 10px;
+		/* Уменьшаем отступы на мобильных */
+	}
+
+	.client-fieldset {
+		padding: 10px 0 0;
+		/* Убираем боковые отступы у fieldset */
+	}
+
+	.client-title {
+		font-size: 20px;
+		padding: 10px 0;
+	}
+}
+
+/* 2. Главная форма:
+   Складываем поля (которые в .client-fieldset-line) 
+   друг под друга на экранах < 768px */
+@media (max-width: 767.98px) {
+	.client-fieldset-line {
+		flex-direction: column;
+		gap: 15px;
+		/* Уменьшаем отступ между полями в колонке */
+	}
+
+	/* Убираем отступ у .form-group, т.к. gap уже есть */
+	.client-fieldset-line .form-group {
+		margin-bottom: 0;
+	}
+}
+
+/* 3. Адаптация кнопок "Submit", "Save Draft", "Cancel" */
+@media (max-width: 575.98px) {
+	.add-file-btn-wrp {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		align-items: stretch;
+		/* Растягиваем кнопки на всю ширину */
+	}
+
+	.btn-save,
+	.btn-draft,
+	.btn-cancel {
+		width: 100%;
+		margin: 0;
+		/* Убираем margin-left */
+	}
+}
+
+/* 4. Адаптация блока "Important stip notes" 
+   (делаем колонки вертикальными) */
+@media (max-width: 767.98px) {
+	.notes {
+		flex-direction: column;
+		gap: 0;
+		margin-top: 20px;
+	}
+
+	.note {
+		margin-bottom: 0;
+		width: 100%;
+		padding-left: 18px;
+	}
+
+	.note-item {
+		margin-bottom: 20px;
+	}
+
+	.note:last-child .note-item:last-child {
+		margin-bottom: 0;
+	}
+}
+
+/* 5. Адаптация сетки файлов (уже адаптивная, 
+   но можно улучшить отступы) */
+@media (max-width: 575.98px) {
+	.files {
+		grid-template-columns: 1fr;
+		/* В одну колонку на самых мал. экранах */
+		gap: 15px;
+	}
+}
+
+/* --- END: Адаптация страницы Edit --- */
