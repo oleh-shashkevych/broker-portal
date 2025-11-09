@@ -337,7 +337,7 @@
     
     /* Починаємо з прозорістю 0 для плавного з'явлення */
     opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
     pointer-events: none; /* Не блокувати кліки, коли прозорий */
 }
 
@@ -353,10 +353,15 @@
     pointer-events: none;
 }
 
+#page-loader * {
+    transition: unset !important;
+}
+
 #loader-lottie-logo {
     /* Використовуємо ті ж розміри, що й у лого на сторінці */
     width: 258px;
-    min-height: 140px; 
+    min-height: 140px;
+    background-color: transparent;
 }
 
 /* =================================== */

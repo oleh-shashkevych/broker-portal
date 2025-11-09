@@ -44,7 +44,7 @@ $(document).ready(function () {
 
         // Видаляємо лоадер з DOM через 500мс (час = transition з CSS)
         setTimeout(function() {
-            loaderElement.remove();
+            // loaderElement.remove();
         }, 500); 
     }
 
